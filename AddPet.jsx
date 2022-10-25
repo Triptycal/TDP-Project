@@ -22,32 +22,36 @@ function AddPet() {
                     name="petname"
                     placeholder="Pet's name..." />
             </label>
+            <br/>
             <label>Enter your pet's species:
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="rabbit">Rabbit</option>
-                <option value="rat">Rat</option>
-                <option value="other">Other</option>
-                <input
-                    type="text"
-                    name="petspecies"
-                    placeholder="Pet's species..." />
+                <select type="text" name="petspecies" placeholder="Pet's species..." >
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="rat">Rat</option>
+                <   option value="other">Other</option>
+                </select>
             </label>
+            <br/>
             <label>Enter your pet's breed:
                 <input
                     type="text"
                     name="petbreed"
                     placeholder="Pet's breed..." />
             </label>
+            <br/>
             <label>Enter your pet's age:
                 <input
                     type="number"
                     name="petage"
+                    min={0}
+                    max={50}
+                    step="1"
                     placeholder="Pet's age..." />
             </label>
+            <br/>
             <button
-                type="button"
-                onClick={handleAdd}
+                type="submit"
                 >
                 Add New Pet
                 </button>
