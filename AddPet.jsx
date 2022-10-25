@@ -7,9 +7,11 @@ function AddPet() {
     const [petbreed, setPetBreed] = useState('');
     const [petage, setPetAge] = useState('');
 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(petname,petspecies,petbreed,petage);
+        <p>{petname}</p>
         // const res = await axios.post('http://localhost:3000/', {
         //     petname, petspecies, petbreed, petage,
         // });
@@ -70,8 +72,10 @@ function AddPet() {
                 type="submit"
                 >
                 Add New Pet
-                </button>
+            </button>
+            <h1>{petname}</h1>
         </form>
+        
     )
 }
 export default AddPet;
