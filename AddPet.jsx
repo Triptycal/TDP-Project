@@ -7,12 +7,13 @@ function AddPet() {
     const [petbreed, setPetBreed] = useState('');
     const [petage, setPetAge] = useState('');
 
-    const handleChange = (event) => {
-
-    }
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(petname,petspecies,petbreed,petage);
+        // const res = await axios.post('http://localhost:3000/', {
+        //     petname, petspecies, petbreed, petage,
+        // });
+        // console.log('New Pet details: ', res.data);
     }
     return (
         <form onSubmit={handleSubmit}>
@@ -20,11 +21,20 @@ function AddPet() {
                 <input
                     type="text"
                     name="petname"
-                    placeholder="Pet's name..." />
+                    value={petname}
+                    placeholder="Pet's name..."
+                    onChange={(event) => setPetName(event.target.value)} 
+                    required/>
             </label>
             <br/>
             <label>Enter your pet's species:
-                <select type="text" name="petspecies" placeholder="Pet's species..." >
+                <select 
+                type="text" 
+                name="petspecies"
+                value={petspecies} 
+                onChange={(event) => setPetSpecies(event.target.value)} 
+                required>
+                    <option value="default">Please enter a value</option>
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
                     <option value="rabbit">Rabbit</option>
@@ -37,6 +47,9 @@ function AddPet() {
                 <input
                     type="text"
                     name="petbreed"
+                    value={petbreed}
+                    onChange={(event) => setPetBreed(event.target.value)} 
+                    required
                     placeholder="Pet's breed..." />
             </label>
             <br/>
@@ -47,6 +60,9 @@ function AddPet() {
                     min={0}
                     max={50}
                     step="1"
+                    value={petage}
+                    required
+                    onChange={(event) => setPetAge(event.target.value)} 
                     placeholder="Pet's age..." />
             </label>
             <br/>
@@ -59,23 +75,3 @@ function AddPet() {
     )
 }
 export default AddPet;
-// const AddPet = ({ submitHandler, newPet, handleAdd }) => {
-//     return (
-//         <form onSubmit={submitHandler}>
-//             <input
-//                 type="text"
-//                 placeholder="Pet's name..."
-//                 onChange={newPet}
-//             />
-//             <button
-//                 type="button"
-//                 onClick={handleAdd}
-//             >
-//                 Add New Pet
-//             </button>
-//         </form>
-//     )
-
-// }
-
-// 
