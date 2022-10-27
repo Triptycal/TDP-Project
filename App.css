@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Create-pet {
+  background-color: #e07007;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: rgb(42, 4, 4);
+  height:250; 
+  width:200;
+}
+
+.Display-pets {
+  background-color: #faa23d;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: right;
+  font-size: calc(10px + 2vmin);
+  color: rgb(42, 4, 4);
+}
