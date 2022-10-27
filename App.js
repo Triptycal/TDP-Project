@@ -2,25 +2,31 @@ import React from 'react';
 import {
   BrowserRouter as Router, Link, Route, Routes,
 } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import CreatePet from './components/CreatePet.jsx';
 import EditPet from './components/EditPet.jsx';
 import ListPet from './components/ListPet.jsx';
 import DeletePet from './components/DeletePet.jsx';
+import logo from "./logo.png";
 
 function App() {
   return (
       <Router>
-          <div>
-          <header className="App-header">
-              <ul>
-                  <li>
-                      <Link to="/">My list</Link>
-                  </li>
-                  <li>
-                      <Link to="/CreatePet">Add a pet</Link>
-                  </li>
-              </ul>
+          <div className="container">
+          
+          <div className="row">
+            <div className="col">
+                <img src={logo} width="100" height="100" alt="some cute pets" />
+            </div>
+            <div className="col">
+                <Link to="/">My list</Link>
+            </div>
+            <div className="col">
+                <Link to="/CreatePet">Add a pet</Link>
+            </div>
+          </div>
+            <header className="App-header">
           </header>
               <Routes>
                 <Route path="/" element={<ListPet/>} />
