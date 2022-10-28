@@ -1,6 +1,6 @@
 import { useState } from 'react';
-//import axios from 'axios';
-import ListPet from './ListPet.jsx';
+import axios from 'axios';
+
 
 function CreatePet() {
     const [petname, setPetName] = useState('');
@@ -9,16 +9,15 @@ function CreatePet() {
     const [petage, setPetAge] = useState('');
 
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(petname,petspecies,petbreed,petage);
-        <ListPet name={petname} species={petspecies} breed={petbreed} age={petage} />
-        // <p>{petname}</p>
-        // const res = await axios.post('http://localhost:3000/', {
-        //     petname, petspecies, petbreed, petage,
-        // });
-        // console.log('New Pet details: ', res.data);
+        const res = await axios.post('http://localhost:3000/CreatePet', {
+            petname, petspecies, petbreed, petage,
+        });
+        console.log('New Pet details: ', res.data);
     }
+
     return (
         <div className="Create-pet" >
         <form onSubmit={handleSubmit}>
@@ -72,19 +71,17 @@ function CreatePet() {
             </label>
             <br/>
             <button
-                type="submit"
+                type="submit" 
+                value="submit"
                 >
                 Add New Pet
             </button>
             
         </form>
+        <div>
+            
+        </div>
         </div>
     )
 }
 export default CreatePet;
-
-
-// const CreatePet = () => {
-//     return( <h1>create pet here</h1>);
-// }
-// export default CreatePet;
