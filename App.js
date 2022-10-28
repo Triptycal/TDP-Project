@@ -8,6 +8,7 @@ import CreatePet from './components/CreatePet.jsx';
 import EditPet from './components/EditPet.jsx';
 import ListPet from './components/ListPet.jsx';
 import DeletePet from './components/DeletePet.jsx';
+import PetCard from './components/PetCard.jsx';
 import logo from "./logo.png";
 
 function App() {
@@ -29,10 +30,9 @@ function App() {
             <header className="App-header">
           </header>
               <Routes>
-                <Route path="/" element={<ListPet/>} />
+                <Route path="/" element={<ListPet />} />
+                <Route path="/Thistle" element={<ListPet name={'Thistle'} species={'Dog'} breed={'MBT'} age={'1'} />} />
                 <Route path="/CreatePet" element={<CreatePet/>} />
-                <Route path="/DeletePet" element={<DeletePet/>} />
-                <Route path="/EditPet" element={<EditPet/>} />
               </Routes>
           </div>
       </Router>
